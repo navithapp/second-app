@@ -1,3 +1,42 @@
-<h3>Servers works!</h3>
+<label for="serverName">Server Name</label>
+<!-- <input 
+    type="text" 
+    name="serverName" 
+    id="serverName"
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+> -->
+<input 
+    type="text" 
+    name="serverName" 
+    id="serverName"
+    class="form-control"
+    [(ngModel)]="serverName"
+>
+<p>{{ serverName }}</p>
+<br>
+<button 
+    class="btn btn-primary" 
+    [disabled]="!allowAddServer"
+    (click)="onServerCreation()">Add New Server
+</button>
+<p>{{serverCreationStatus}}</p>
 <app-server></app-server>
+<hr>
+<br>
+<label for="userNameId">User Name:</label>
+<input 
+    type="text" 
+    name="userNameId" 
+    id="userNameId" 
+    class="form-control"
+    [(ngModel)]="userName"
+>
+<p>Entered username : {{ userName }}</p>
+<br>
+<button 
+    class="btn btn-primary"
+    [disabled]="!userName || userName.length === 0"
+    (click)="clearUserName()">Reset Username
+</button>
 
